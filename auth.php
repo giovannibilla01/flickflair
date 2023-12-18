@@ -7,7 +7,7 @@
         <div class="row" id="auth-row">
             <div class="col-md-4" id="login-container">
                 <h2>Entrar</h2>
-                <form action="" method="post">
+                <form action="<?= $BASE_URL ?>auth_process.php" method="post">
                     <input type="hidden" name="type" value="login">
                     <div class="form-group">
                         <label for="email">E-mail:</label>
@@ -29,11 +29,11 @@
                         <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu e-mail">
                     </div>
                     <div class="form-group">
-                        <label for="name">E-mail:</label>
+                        <label for="name">Nome:</label>
                         <input type="text" class="form-control" name="name" id="name" placeholder="Digite seu Nome">
                     </div>
                     <div class="form-group">
-                        <label for="lastname">E-mail:</label>
+                        <label for="lastname">Sobrenome:</label>
                         <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Digite seu Sobrenome">
                     </div>
                     <div class="form-group">
