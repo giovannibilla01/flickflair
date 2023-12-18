@@ -8,6 +8,8 @@
 
     $message = new Message($BASE_URL);
 
+    $userDAO = new UserDAO($connection, $BASE_URL);
+
     $type = filter_input(INPUT_POST, "type");
 
     if ($type == "register") {
@@ -20,7 +22,30 @@
 
         if ($name && $lastname && $email && $password) {
 
+            if($password == $confirmpassword) {
 
+                if ($userDAO->findByEmail($email) == false) {
+                    $user = new User();
+
+                    $userToken = $user->generateToken();
+                    $finalPassword = $user->generatePassword($password);
+
+                    $user->name = $name;
+                    $user->lastname = $lastname;
+                    $user->email = $email;
+                    $user->password = $finalPassword;
+                    $user->token = $userToken;
+                    
+                    $auth = true;
+
+                    $userDAO->create($user, $auth);
+                } else {
+                    $message->setMessage("Email já cadastrado no sistema", "error", "back");
+                }
+
+            } else {
+                $message->setMessage("As senhas não são iguais", "error", "back");
+            }
 
         } else {
 
