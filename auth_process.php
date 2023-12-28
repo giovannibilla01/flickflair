@@ -10,6 +10,8 @@
 
     $userDAO = new UserDAO($connection, $BASE_URL);
 
+    $user = new User();
+
     $type = filter_input(INPUT_POST, "type");
 
     if ($type == "register") {
@@ -25,8 +27,6 @@
             if($password == $confirmpassword) {
 
                 if ($userDAO->findByEmail($email) == false) {
-                    $user = new User();
-
                     $userToken = $user->generateToken();
                     $finalPassword = $user->generatePassword($password);
 

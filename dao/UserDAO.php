@@ -190,6 +190,19 @@
         }
 
         public function changePassword(User $user) {
+            $query = "UPDATE users SET 
+                password = :password
+                WHERE id = :id
+            ";
+
+            $stmt = $this->connection->prepare($query);
+
+            $stmt->bindParam(":id", $user->id);
+            $stmt->bindParam(":password", $user->password);
+
+            $stmt->execute();
+            
+            $this->message->setMessage("Senha Alterada com Sucesso", "success", "editprofile.php");
 
         }
 

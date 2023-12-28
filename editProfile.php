@@ -43,9 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label for="bio">Sobre Voce:</label>
-                        <textarea class="form-control" name="bio" id="bio" rows="5" placeholder="Conte Sobre voce...">
-                            <?= $userData->bio ?>
-                        </textarea>
+                        <textarea class="form-control" name="bio" id="bio" rows="5" placeholder="Conte Sobre voce..."><?= $userData->bio ?></textarea>
                     </div>
                 </div>
             </div>
