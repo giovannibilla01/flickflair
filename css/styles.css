@@ -182,6 +182,7 @@
 }
 
 .card-btn {
+    margin-top: 8px;
     color: #000;
     background-color: #F5C518;
     border: 2px solid #F5C518;

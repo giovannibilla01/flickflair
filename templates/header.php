@@ -3,6 +3,7 @@
     require_once("db.php");
 
     require_once("models/Message.php");
+    require_once("models/User.php");
     require_once("dao/UserDAO.php");
 
     $message = new Message(($BASE_URL));
@@ -12,6 +13,8 @@
     if (!empty($flassMessage['msg'])) {
         $message->clearMessage();
     }
+
+    $user = new User();
 
     $userDAO = new UserDAO($connection, $BASE_URL);
 
