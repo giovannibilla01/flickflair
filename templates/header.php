@@ -5,6 +5,8 @@
     require_once("models/Message.php");
     require_once("models/User.php");
     require_once("dao/UserDAO.php");
+    require_once("dao/MovieDAO.php");
+
 
     $message = new Message(($BASE_URL));
 

@@ -1,33 +1,47 @@
 <?php
     require_once ("templates/header.php");
+
+    $movieDao = new MovieDAO($connection, $BASE_URL);
+
+    $lastestMovies = $movieDao->getLastestMovies();
+
+    $actionMovies = $movieDao->getMoviesByCategory("Ação");
+
+    $comedyMovies = $movieDao->getMoviesByCategory("Comédia");
+
 ?>
 
 <div id="main-container" class="container-fluid">
     <h2 class="section-title">Filmes Novos</h2>
     <p class="section-description">Veja os Últimos Filmes Adicionados!</p>
     <div class="movies-container">
-        <div class="card movie-card">
-            <div class="card-img-top" style="background-image: url('<?= $BASE_URL ?>img/movies/movie_cover.jpg')"></div>
-            <div class="card-body">
-                <p class="card-rating">
-                    <i class="fas fa-star"></i>
-                    <span class="rating">9</span>
-                </p>
-                <h5 class="card-title">
-                    <a href="">
-                        Titulo do Filme
-                    </a>
-                </h5>
-                <a href="" class="btn btn-primary rate-btn">Avaliar</a>
-                <a href="" class="btn btn-primary card-btn">Mais</a>
-            </div>
-        </div>
+        <?php foreach ($lastestMovies as $movie) :?>
+            <?php require ("templates/movie_card.php") ?>
+        <?php endforeach; ?>
+        <?php if (empty($lastestMovies)): ?>
+            <p class="empty-list">Ainda não existem filmes cadastrados nessa categoria!</p>
+        <?php endif; ?>
     </div>
     <h2 class="section-title">Ação</h2>
     <p class="section-description">Os Melhores Filmes de Ação!</p>
-    <div class="movies-container"></div>
+    <div class="movies-container">
+        <?php foreach ($actionMovies as $movie) :?>
+            <?php require ("templates/movie_card.php") ?>
+        <?php endforeach; ?>
+        <?php if (empty($actionMovies)): ?>
+            <p class="empty-list">Ainda não existem filmes cadastrados nessa categoria!</p>
+        <?php endif; ?>
+    </div>
     <h2 class="section-title">Comédia</h2>
     <p class="section-description">Os Melhores da Comédia!</p>
+    <div class="movies-container">
+        <?php foreach ($comedyMovies as $movie) :?>
+            <?php require ("templates/movie_card.php") ?>
+        <?php endforeach; ?>
+        <?php if (empty($comedyMovies)): ?>
+            <p class="empty-list">Ainda não existem filmes cadastrados nessa categoria!</p>
+        <?php endif; ?>
+    </div>
 </div>
 
 <?php

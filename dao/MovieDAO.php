@@ -67,10 +67,46 @@
 
         }
         public function getLastestMovies() {
+            $movies = [];
 
+            $query = "SELECT * FROM movies ORDER BY id DESC";
+            
+            $stmt = $this->connection->query($query);
+
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+
+                $moviesArray = $stmt->fetchAll();
+
+                foreach ($moviesArray as $movie) {
+                    $movies[] = $this->buildMovie($movie);
+                }
+            }
+
+            return $movies;
         }
         public function getMoviesByCategory($category) {
+            $movies = [];
 
+            $query = "SELECT * FROM movies WHERE category = :category ORDER BY id DESC";
+            
+            $stmt = $this->connection->prepare($query);
+
+            $stmt->bindParam(":category", $category);
+
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+
+                $moviesArray = $stmt->fetchAll();
+
+                foreach ($moviesArray as $movie) {
+                    $movies[] = $this->buildMovie($movie);
+                }
+            }
+
+            return $movies;
         }
         public function getMoviesByUserId($id) {
 
