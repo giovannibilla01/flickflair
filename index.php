@@ -1,8 +1,6 @@
 <?php
     require_once ("templates/header.php");
 
-    $movieDao = new MovieDAO($connection, $BASE_URL);
-
     $lastestMovies = $movieDao->getLastestMovies();
 
     $actionMovies = $movieDao->getMoviesByCategory("Ação");

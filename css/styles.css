@@ -358,7 +358,7 @@
 }
 
 #movies-dashboard .table {
-    color: #FFF;
+    margin-top: 1em;
 }
 
 #movies-dashboard .table th {
@@ -370,9 +370,10 @@
 }
 
 .table-movie-title {
-    color: #FFF;
+    color: #000000;
     font-weight: bold;
     transition: .5s;
+    text-decoration: none;
 }
 
 .table-movie-title:hover {
@@ -396,6 +397,7 @@
     font-weight: bold;
     transition: .5s;
     border: none;
+    text-decoration: none;
 }
 
 .edit-btn {

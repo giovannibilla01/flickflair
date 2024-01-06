@@ -109,7 +109,26 @@
             return $movies;
         }
         public function getMoviesByUserId($id) {
+            $movies = [];
 
+            $query = "SELECT * FROM movies WHERE users_id = :users_id ORDER BY id ASC";
+            
+            $stmt = $this->connection->prepare($query);
+
+            $stmt->bindParam(":users_id", $id);
+
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+
+                $moviesArray = $stmt->fetchAll();
+
+                foreach ($moviesArray as $movie) {
+                    $movies[] = $this->buildMovie($movie);
+                }
+            }
+
+            return $movies;
         }
     }
 ?>

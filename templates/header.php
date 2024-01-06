@@ -20,6 +20,8 @@
 
     $userDAO = new UserDAO($connection, $BASE_URL);
 
+    $movieDAO = new MovieDAO($connection, $BASE_URL);
+
     $userData = $userDAO->verifyToken(false);
 ?>
 <!DOCTYPE html>
