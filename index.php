@@ -1,11 +1,11 @@
 <?php
     require_once ("templates/header.php");
 
-    $lastestMovies = $movieDao->getLastestMovies();
+    $lastestMovies = $movieDAO->getLastestMovies();
 
-    $actionMovies = $movieDao->getMoviesByCategory("Ação");
+    $actionMovies = $movieDAO->getMoviesByCategory("Ação");
 
-    $comedyMovies = $movieDao->getMoviesByCategory("Comédia");
+    $comedyMovies = $movieDAO->getMoviesByCategory("Comédia");
 
 ?>
 
