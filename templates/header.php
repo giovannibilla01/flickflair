@@ -4,6 +4,8 @@
 
     require_once("models/Message.php");
     require_once("models/User.php");
+    require_once("models/Movie.php");
+    
     require_once("dao/UserDAO.php");
     require_once("dao/MovieDAO.php");
 
