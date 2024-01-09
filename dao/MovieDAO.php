@@ -55,7 +55,15 @@
 
         }
         public function destroy(Movie $movie) {
+            $query = "DELETE FROM movies WHERE id = :id";
 
+            $stmt = $this->connection->prepare($query);
+
+            $stmt->bindParam(":id", $movie->id);
+
+            $stmt->execute();
+
+            $this->message->setMessage("Filme deletado!", "success", "dashboard.php");
         }
         public function findAll() {
 

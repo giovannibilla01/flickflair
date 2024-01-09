@@ -67,6 +67,21 @@
             $message->setMessage("São necessarias mais informações sobre o filme!", "error", "back");
         }
 
+    } else if ($type == "delete") {
+
+        $id = filter_input(INPUT_POST, "id");
+
+        $movie = $movieDAO->findById($id);
+
+        if ($movie) {
+            if ($movie->users_id == $userData->id) {
+                $movieDAO->destroy($movie);
+            } else {
+                $message->setMessage("Informações Inválidas!", "error", "index.php");
+            }
+        } else {
+            $message->setMessage("Informações Inválidas!", "error", "index.php");
+        }
     } else {
         $message->setMessage("Informações Inválidas!", "error", "index.php");
     }
