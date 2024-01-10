@@ -53,6 +53,29 @@
         }
         public function update(Movie $movie) {
 
+            $query = "UPDATE movies SET 
+            title = :title, 
+            description = :description, 
+            image = :image, 
+            category = :category, 
+            trailer = :trailer, 
+            length = :length
+            WHERE id = :id";
+
+            $stmt = $this->connection->prepare($query);
+
+            $stmt->bindParam(":id", $movie->id);
+            $stmt->bindParam(":title", $movie->title);
+            $stmt->bindParam(":description", $movie->description);
+            $stmt->bindParam(":image", $movie->image);
+            $stmt->bindParam(":category", $movie->category);
+            $stmt->bindParam(":trailer", $movie->trailer);
+            $stmt->bindParam(":length", $movie->length);
+
+            $stmt->execute();
+
+            $this->message->setMessage("Filme Atualizado!", "success", "dashboard.php");
+
         }
         public function destroy(Movie $movie) {
             $query = "DELETE FROM movies WHERE id = :id";
