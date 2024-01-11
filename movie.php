@@ -107,7 +107,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <p class="comment-title">Comtário:</p>
+                            <p class="comment-title">Comentário:</p>
                             <p>Este é um commentario</p>
                         </div>
                     </div>
