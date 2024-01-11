@@ -31,6 +31,23 @@
 
         public function create(Review $review) {
 
+            $query = "INSERT INTO reviews (
+                rating, review, movies_id, users_id
+            ) VALUES (
+                :rating, :review, :movies_id, :users_id
+            )";
+
+            $stmt = $this->connection->prepare($query);
+
+            $stmt->bindParam(":rating", $review->rating);
+            $stmt->bindParam(":review", $review->review);
+            $stmt->bindParam(":movies_id", $review->movies_id);
+            $stmt->bindParam(":users_id", $review->users_id);
+
+            $stmt->execute();
+
+            $this->message->setMessage("Dados Inseridos com sucesso","success","index.php");
+
         }
 
         public function getMoviesReview($id) {
