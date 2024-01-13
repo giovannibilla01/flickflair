@@ -5,7 +5,7 @@
                 <div class="profile-image-container review-image" style="background-image: url('<?= $BASE_URL ?>img/users/<?= $review["user"]->image ?? "user.png" ?>');"></div>
             </div>
             <div class="col-md-9 author-details-container">
-                <a href="">
+                <a href="<?= $BASE_URL ?>profile.php?id=<?= $review["user"]->id ?>">
                     <h4 class="author-name">
                         <?= $review["user"]->name ?>
                     </h4>
