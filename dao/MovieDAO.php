@@ -123,6 +123,28 @@
         }
         public function findByTitle($title) {
 
+            $movies = [];
+
+            $query = "SELECT * FROM movies WHERE title LIKE :title ORDER BY id DESC";
+            
+            $stmt = $this->connection->prepare($query);
+
+            $stmt->bindValue(":title", '%' . $title . '%');
+
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+
+                $moviesArray = $stmt->fetchAll();
+
+                foreach ($moviesArray as $movie) {
+                    $movies[] = $this->buildMovie($movie);
+                }
+            }
+
+            return $movies;
+
+
         }
         public function getLastestMovies() {
             $movies = [];
