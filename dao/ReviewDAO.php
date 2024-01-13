@@ -52,11 +52,31 @@
 
         public function getMoviesReview($id) {
 
-            $query = "";
+            $reviews = [];
+
+            $query = "SELECT * FROM reviews WHERE movies_id = :movies_id";
 
             $stmt = $this->connection->prepare($query);
 
-            
+            $stmt->bindParam(":movies_id", $id);
+
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+                $reviewsData = $stmt->fetchAll();
+
+                $userDao = new UserDAO($this->connection, $this->url);
+
+                foreach ($reviewsData as $review) {
+                    $reviewObject = $this->buildReview($review);
+
+                    $user = $userDao->findById($reviewObject->users_id);
+
+                    $reviews[] = ["review" => $reviewObject, "user" => $user];
+                }
+            }
+
+            return $reviews;
 
         }
 

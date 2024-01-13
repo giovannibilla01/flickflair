@@ -90,7 +90,12 @@
                 </div>
             </div>
             <?php endif; ?>
-<!-- comentario -->
+            <?php foreach ($movieReviews as $review): ?>
+                <?php require("templates/user_review.php") ?>
+            <?php endforeach; ?>
+            <?php if (count($movieReviews) == 0): ?>
+                <p class="empty-list">Não há comentarios!</p>
+            <?php endif; ?>
         </div>
     </div>
 </div>
