@@ -26,9 +26,10 @@
         if ($userData->id === $movie->users_id) {
             $userOwnsMovie = true;
         }
-    }
 
-    $alreadyReviewed = false;
+        $alreadyReviewed = $reviewDAO->hasAlreadyReviewed($id, $userData->id);
+
+    }
 
     $movieReviews = $reviewDAO->getMoviesReview($id);
 
