@@ -52,6 +52,12 @@
 
         public function getMoviesReview($id) {
 
+            $query = "";
+
+            $stmt = $this->connection->prepare($query);
+
+            
+
         }
 
         public function hasAlreadyReviewed($id, $userId) {

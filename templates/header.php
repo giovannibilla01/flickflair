@@ -5,9 +5,11 @@
     require_once("models/Message.php");
     require_once("models/User.php");
     require_once("models/Movie.php");
+    require_once("models/Review.php");
     
     require_once("dao/UserDAO.php");
     require_once("dao/MovieDAO.php");
+    require_once("dao/ReviewDAO.php");
 
 
     $message = new Message(($BASE_URL));
@@ -23,6 +25,8 @@
     $userDAO = new UserDAO($connection, $BASE_URL);
 
     $movieDAO = new MovieDAO($connection, $BASE_URL);
+    
+    $reviewDAO = new ReviewDAO($connection, $BASE_URL);
 
     $userData = $userDAO->verifyToken(false);
 ?>
