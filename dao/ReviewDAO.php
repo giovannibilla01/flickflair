@@ -101,6 +101,30 @@
 
         public function getRatings($id) {
 
+            $query = "SELECT * FROM reviews WHERE movies_id = :movies_id";
+
+            $stmt = $this->connection->prepare($query);
+
+            $stmt->bindParam(":movies_id", $id);
+
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+                $rating = 0;
+
+                $reviews = $stmt->fetchAll();
+
+                foreach ($reviews as $review) {
+                    $rating += $review["rating"]; 
+                }
+
+                $rating = $rating / count($reviews);
+
+            } else {
+                $rating = "Não avalido";
+            }
+
+            return $rating;
         }
 
     }

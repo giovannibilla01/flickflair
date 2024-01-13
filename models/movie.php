@@ -8,6 +8,7 @@
         public $category;
         public $length;
         public $users_id;
+        public $rating;
         
         public function imageGenerateName() {
             return bin2hex(random_bytes(60) . ".jpg");
