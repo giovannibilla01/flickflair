@@ -27,7 +27,6 @@
                 <select name="category" id="category" class="form-control">
                     <option value="">Selecione</option>
                     <option value="Ação">Ação</option>
-                    <option value="Drama">Drama</option>
                     <option value="Comédia">Comédia</option>
                 </select>
             </div>
