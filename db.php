@@ -1,5 +1,5 @@
 <?php
-    $db_name = "moviestar";
+    $db_name = "flickflair";
     $db_host = "localhost";
     $db_user = "root";
     $db_pass = "";
