@@ -35,9 +35,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Star</title>
+    <title>FlickFlair: Notas de Cinema e Críticas Aficcionadas</title>
     <!-- FAVICON -->
-    <link rel="shortcut icon" href="img/moviestar.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/flickflair.ico" type="image/x-icon">
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.css" integrity="sha512-r0fo0kMK8myZfuKWk9b6yY8azUnHCPhgNz/uWDl2rtMdWJlk7gmd9socvGZdZzICwAkMgfTkVrplDahQ07Gi0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- FONT AWESOME -->
@@ -49,8 +49,8 @@
     <header>
         <nav id="main-navbar" class="navbar navbar-expand-lg">
             <a href="<?= $BASE_URL ?>" class="navbar-brand">
-                <img src="<?= $BASE_URL ?>img/logo.svg" alt="MovieStar" id="logo">
-                <span id="moviestar-title">MovieStar</span>
+                <img src="<?= $BASE_URL ?>img/logo.png" alt="FlickFlair" id="logo">
+                <span id="flickflair-title">FlickFlair</span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>

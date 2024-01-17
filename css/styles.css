@@ -7,7 +7,7 @@
     width: 50px;
 }
 
-#moviestar-title {
+#flickflair-title {
     color: #FFF;
     position: absolute;
     bottom: -2px;
@@ -92,7 +92,7 @@
 
 .section-title {
     font-size: 24px;
-    border-left: 4px solid #F5C518;
+    border-left: 4px solid #f55a18;
     padding-left: 12px;
     margin-top: 20px;
 }
@@ -133,7 +133,7 @@
 }
 
 .fas.fa-star {
-    color: #F5C518;
+    color: #f5f518;
 }
 
 .rating {
@@ -142,7 +142,7 @@
 
 .rate-btn {
     margin-bottom: 15px;
-    color: #5799EF;
+    color: #ef8757;
     background-color: #333;
     border-color: #333;
     width: 100%;
@@ -169,7 +169,7 @@
 #login-container h2,
 #register-container h2 {
     text-align: center;
-    border-bottom: 2px solid #F5C518;
+    border-bottom: 2px solid #f55a18;
     width: 200px;
     margin: 0 auto;
     padding: 10px;
@@ -184,15 +184,15 @@
 .card-btn {
     margin-top: 8px;
     color: #000;
-    background-color: #F5C518;
-    border: 2px solid #F5C518;
+    background-color: #f55a18;
+    border: 2px solid #f55a18;
     width: 100%;
 }
 
 .card-btn:hover {
     background-color: transparent;
-    color: #F5C518;
-    border-color: #F5C518;
+    color: #f55a18;
+    border-color: #f55a18;
 }
 
 /* Edit Profile */
@@ -200,7 +200,7 @@
 .profile-image-container {
     width: 150px;
     height: 150px;
-    border: 6px solid #F5C518;
+    border: 6px solid #f55a18;
     border-radius: 100%;
     background-size: cover;
     background-position: center;
@@ -295,7 +295,7 @@
 .page-title:after {
     content: "";
     width: 300px;
-    border-bottom: 2px solid #F5C518;
+    border-bottom: 2px solid #f55a18;
     display: block;
     margin: 0 auto;
     padding-top: 7px;
@@ -332,7 +332,7 @@
 #reviews-container {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 4px solid #F5C518;
+    border-top: 4px solid #f55a18;
 }
 
 .review {
@@ -345,7 +345,7 @@
 }
 
 .author-name a {
-    color: #F5C518;
+    color: #f55a18;
 }
 
 .comment-title {
@@ -377,7 +377,7 @@
 }
 
 .table-movie-title:hover {
-    color: #F5C518;
+    color: #f55a18;
 }
 
 .actions-column {
@@ -429,7 +429,7 @@
 
 #search-result,
 .back-link {
-    color: #F5C518;
+    color: #f55a18;
 }
 
 /* Footer */
@@ -569,6 +569,6 @@
     }
 
     .fas.fa-bars {
-        color: #F5C518;
+        color: #f55a18;
     }
 }
